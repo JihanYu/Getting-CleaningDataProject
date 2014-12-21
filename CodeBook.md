@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------------
 run_analysis.R
 
-** Read test & train data
+## Read test & train data
 test_x : read the "X_test.txt" file from the directory "test"
         (this contains variables of the features)
 test_y : read the "Y_test.txt" file from the directory "test"
@@ -14,12 +14,12 @@ test_data : combine the loaded variables in order,
 
 Training files are equivalent as above("test" -> "train")
 
-* Merge the test & train data sets and sort the data
+# Merge the test & train data sets and sort the data
 merge_data : simply row-bind the test(test_x) and training(train_x) data
 sort_data : sort the combined data(merge_data) in the order of "Subject", then "Activity"
 
 
-** Read the features of the variables and extract mean & standard deviations
+## Read the features of the variables and extract mean & standard deviations
 features : read the "features.txt" file (this contains variable names of test_x or train_x)
 mean_id or std_id : find the indices which indicate the mean and standard deviations 
                       in the features
@@ -27,14 +27,14 @@ meanstd_data : data set extract the subject No, activity No,
                 and measurements on the mean & standard deviation by indicies
 
 
-** Use activity names to name the activities & label the data set with variable names
+## Use activity names to name the activities & label the data set with variable names
 activity_label : read the "activity_labels.txt" to assign activity No for name
 for loop : input the activity name according to the activity No
 
 then assign the variable names by "colnames"
 
 
-** Calculate average of each variables for each activity and each subject
+## Calculate average of each variables for each activity and each subject
 dat.long : melt the subset mean & std data(meanstd_data) as the subject & activity
 ave_data : then calculate the average according to the subject & activity
           this results the averaged measurements for each activity and each subject
